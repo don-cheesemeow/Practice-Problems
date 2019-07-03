@@ -1,8 +1,15 @@
+#PROBLEM
 #for a given alpha numeric string, find first recurring character in string
 #if no recurring character, return none/null
 #e.g. string = 'abcdab' ; return a
 #e.g. string = 'abcdba' ; return b
 #e.g. string = 'abcd'   ; return None
+
+#MASONS SOLUTION
+#try to solve it before looking at answer
+#we can then compare answers
+
+
 
 import time
 
