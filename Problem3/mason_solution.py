@@ -6,11 +6,9 @@
 import time
 
 example = [3,7,5,6,9]
-def find_window_to_sort(int_list):
+def find_window_to_sort(int_list,left=None,right=None):
     
     zipped_list = zip(int_list, sorted(int_list))
-    left = None
-    right = None
     
     for pair in zipped_list:
         if pair[0] != pair[1]:
