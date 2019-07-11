@@ -9,19 +9,17 @@ example = [3,7,5,6,9]
 def find_window_to_sort(int_list):
     
     zipped_list = zip(int_list, sorted(int_list))
-    left = 0
-    right = len(zipped_list) - 1
+    left = None
+    right = None
     
     for pair in zipped_list:
         if pair[0] != pair[1]:
-            break
-        else:
-            left += 1            
+            left = zipped_list.index(pair)   
+	    break
     for pair in reversed(zipped_list):
         if pair[0] != pair[1]:
-            break
-        else:
-            right -= 1
+             right = zipped_list.index(pair)
+	     break
             
     sort_range = tuple((left,right))    
     return sort_range
