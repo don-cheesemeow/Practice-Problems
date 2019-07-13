@@ -1,0 +1,15 @@
+def product_of_elements(*args):
+    
+    product_list = []
+    total_product = 1
+    
+    for i in args:
+        total_product = total_product*i
+        
+    for i in args:
+        running_product = int(total_product/i)
+        product_list.append(running_product)
+    
+    return product_list
+
+product_of_elements(1,2,3,4,5)
