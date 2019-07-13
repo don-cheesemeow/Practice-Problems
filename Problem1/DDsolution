@@ -1,0 +1,61 @@
+#PROBLEM
+#for a given alpha numeric string, find first recurring character in string
+#if no recurring character, return none/null
+#e.g. string = 'abcdab' ; return a
+#e.g. string = 'abcdba' ; return b
+#e.g. string = 'abcd'   ; return None
+
+##Duncan's solution
+##I wrote the function, then copied Mason's work for time comparison
+
+import time
+
+def repeater(string):
+
+    char_list = []
+    repeated_list = []
+
+    for i in string:
+        if i not in char_list:
+            char_list.append(i)
+        else:
+            repeated_list.append(i)
+            return i
+        
+    if len(repeated_list) == 0:
+        return 'None'
+            
+start = time.time()
+result = repeater('abcda')
+stop = time.time()
+
+total_time = stop - start
+print(total_time, result)
+
+
+
+#MASONS SOLUTION
+#try to solve it before looking at answer
+#we can then compare answers
+
+
+
+import time
+
+def first_recurring(string):
+    appearances = {}
+    for char in string:
+        if char in appearances:
+            break
+        elif char not in appearances:
+            appearances[char] = 1
+            if char == string[-1]:
+                char = None
+    return char
+
+start = time.time()
+result = first_recurring('abcda')
+stop = time.time()
+
+total_time = stop - start
+print total_time, result  
